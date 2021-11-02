@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="org.zerock.mapper.AdminMapper">
+	<!-- 작가 등록 -->
+  	<insert id="goodsEnroll">
+  	
+  		insert into goods(goodsName, cateCode, goodsPrice, goodsStock, goodsIntro, goodsContents)
+		values(#{goodsName},#{cateCode},#{goodsPrice},#{goodsStock},#{goodsIntro},#{goodsContents})
+
+  	</insert>
+	
+	<!-- 카테고리 리스트 -->
+  	<select id="cateList" resultType="org.zerock.domain.CateVO">
+  	
+  		select * from cate order by cateCode
+  	
+  	</select>
+	
+		<!-- 상품 리스트 -->
+	<select id="goodsGetList" resultType="org.zerock.domain.GoodsVO">
+	
+		select  goodsId, goodsName, c.cateName, goodsStock, a.regDate
+		from goods a 
+		left outer join cate c on a.cateCode = c.cateCode
+		<if test="keyword != null">
+			where (goodsName like concat ('%', #{keyword}, '%'))
+		</if>
+		order by goodsId desc 
+		limit #{skip}, #{amount}		
+	
+	</select>
+  	
+  	<!-- 상품 총 갯수 -->
+  	<select id="goodsGetTotal" resultType="int">
+  	
+  		select count(*) from goods
+  		
+  		<if test="keyword != null">
+  		
+  			where goodsName like concat('%' , #{keyword}, '%')
+  		
+  		</if>
+  	
+  	</select>
+
+</mapper>
