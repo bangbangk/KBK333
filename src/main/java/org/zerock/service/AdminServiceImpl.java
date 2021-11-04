@@ -35,6 +35,13 @@ public class AdminServiceImpl implements AdminService {
 		
 		return adminMapper.cateList();
 	}
+	/* 2차 카테고리 리스트 */
+	@Override
+	public List<CateVO> cate2List(String cate1) {
+		log.info("(service)2차 cateList........"+cate1);
+		
+		return adminMapper.cate2List(cate1);
+	}
 	
 	/* 상품 리스트 */
 	@Override
@@ -47,5 +54,7 @@ public class AdminServiceImpl implements AdminService {
 	public int goodsGetTotal(Criteria cri) {
 		log.info("goodsGetTotal().........");
 		return adminMapper.goodsGetTotal(cri);
-	}	
+	}
+
+	
 }

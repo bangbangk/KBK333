@@ -8,8 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import org.zerock.domain.CategoryVO;
+import org.zerock.domain.CateVO;
 import org.zerock.domain.GoodsVO;
 import org.zerock.service.GoodsService;
 
@@ -24,7 +23,7 @@ public class GoodsController {
 	 @RequestMapping(value = "/category", method = RequestMethod.GET)
 	 public void getList(Model model) throws Exception {
 	  
-	  List<CategoryVO> category = null;
+	  List<CateVO> category = null;
 	  category = service.category();
 	  model.addAttribute("category", category);
 	 }

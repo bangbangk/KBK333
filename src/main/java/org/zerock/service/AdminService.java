@@ -13,6 +13,9 @@ public interface AdminService {
 	/* 카테고리 리스트 */
 	public List<CateVO> cateList();
 	
+	/* 2치 카테고리 리스트 */
+	public List<CateVO> cate2List(String cate1);
+	
 	/* 상품 리스트 */
 	public List<GoodsVO> goodsGetList(Criteria cri);
 	

@@ -10,9 +10,7 @@
 <link rel="stylesheet" href="../resources/css/admin/goodsManage.css">
  
 <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 </head>
 <body>
@@ -29,6 +27,7 @@
 	                    			<tr>
 										<td class="th_column_1">상품 번호</td>
 	                    				<td class="th_column_2">상품 이름</td>
+	                    				<td class="th_column_3">상품 가격</td>
 	                    				<td class="th_column_4">카테고리</td>
 	                    				<td class="th_column_5">재고</td>
 	                    				<td class="th_column_6">등록날짜</td>
@@ -36,11 +35,12 @@
 	                    		</thead>	
 	                    		<c:forEach items="${list}" var="list">
 	                    		<tr>
-	                    			<td><c:out value="${list.goodsId}"></c:out></td>
-	                    			<td><c:out value="${list.goodsName}"></c:out></td>
-	                    			<td><c:out value="${list.cateName}"></c:out></td>
-	                    			<td><c:out value="${list.goodsStock}"></c:out></td>
-	                    			<td><fmt:formatDate value="${list.regDate}" pattern="yyyy-MM-dd"/></td>
+	                    			<td><c:out value="${list.gdsNum}"></c:out></td>
+	                    			<td><c:out value="${list.gdsName}"></c:out></td>
+	                    			<td><c:out value="${list.gdsPrice}"></c:out></td>
+	                    			<td><c:out value="${list.cateCode}"></c:out></td>
+	                    			<td><c:out value="${list.gdsStock}"></c:out></td>
+	                    			<td><fmt:formatDate value="${list.gdsDate}" pattern="yyyy-MM-dd"/></td>
 	                    		</tr>
 	                    		</c:forEach>
 	                    	</table>
@@ -48,7 +48,7 @@
 	                    <!-- 상품 리스트 X -->
                 		<c:if test="${listCheck == 'empty'}">
                 			<div class="table_empty">
-                				등록된 작가가 없습니다.
+                				등록된 상품이 없습니다
                 			</div>
                 		</c:if> 
                 	</div>
@@ -123,7 +123,7 @@ $(document).ready(function(){
 let searchForm = $('#searchForm');
 let moveForm = $('#moveForm');
 
-/* 작거 검색 버튼 동작 */
+/* 검색 버튼 동작 */
 $("#searchForm button").on("click", function(e){
 	
 	e.preventDefault();
