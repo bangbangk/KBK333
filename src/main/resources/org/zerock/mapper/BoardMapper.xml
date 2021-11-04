@@ -10,5 +10,18 @@
         insert into board(title, content, writer) values (#{title}, #{content}, #{writer})
         
     </insert>
- 
+    
+    <!-- 게시판 목록 -->
+    <select id="getList" resultType="org.zerock.domain.BoardVO">
+    
+        select * from board
+    
+    </select>
+ 	
+ 	<!-- 게시판 조회 -->
+    <select id="getPage" resultType="org.zerock.domain.BoardVO">
+    
+        select * from board where bno = #{bno}
+    
+    </select>
   </mapper>

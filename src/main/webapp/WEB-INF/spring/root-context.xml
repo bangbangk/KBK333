@@ -28,6 +28,5 @@
 	
 	<mybatis-spring:scan base-package="org.zerock.mapper"/>
 	<context:component-scan base-package="org.zerock.service"></context:component-scan>
-	<context:component-scan base-package="org.zerock.dao"></context:component-scan>
 	<context:component-scan base-package="org.zerock.domain"></context:component-scan>
 </beans>

@@ -25,7 +25,7 @@
                     				<label>제품 이름</label>
                     			</div>
                     			<div class="form_section_content">
-                    				<input name="goodsName">
+                    				<input name="gdsName">
                     			</div>
                     		</div>           
                     		<div class="form_section">
@@ -35,14 +35,21 @@
                     			<div class="form_section_content">
 	                    			<div class="cate_wrap">
 										<span>1차 분류</span>
-										<select class="cate1">
-											<option selected value="none">선택</option>
+										<select class="cate1" name="catename">
+											<option value="none">선택</option>
+											<option value="outer">Outer</option>
+											<option value="top">Top</option>
+											
 										</select>
 									</div>
 									<div class="cate_wrap">
 										<span>2차 분류</span>
-										<select class="cate2">
-											<option selected value="none">선택</option>
+										<select class="cate2"  name="catename">
+											<option value="">선택</option>
+											<option value="Tee">Tee</option>
+											<option value="Blouse">Blouse</option>
+											<option value="Shirts">Shirts</option>
+											<option value="Knit">Knit</option>
 										</select>
 									</div>
 								</div>							
@@ -60,23 +67,23 @@
                     				<label>상품 재고</label>
                     			</div>
                     			<div class="form_section_content">
-                    				<input name="goodsStock" value="0">
+                    				<input name="gdsPrice" value="0">
                     			</div>
                     		</div>    		
-                    		<div class="form_section">
+                    		<!-- <div class="form_section">
                     			<div class="form_section_title">
                     				<label>상품 요약</label>
                     			</div>
                     			<div class="form_section_content">
                     				<textarea name="goodsIntro" id="goodsIntro_textarea"></textarea>
                     			</div>
-                    		</div>        		
+                    		</div>       -->  		
                     		<div class="form_section">
                     			<div class="form_section_title">
                     				<label>상품 내용</label>
                     			</div>
                     			<div class="form_section_content">
-                    				<textarea name="goodsContents" id="goodsContents_textarea"></textarea>
+                    				<textarea name="gdsDes" id="goodsContents_textarea"></textarea>
                     			</div>
                     		</div>
                    		</form>
@@ -111,12 +118,12 @@
 	/* 위지윅 적용 */
 	 
 	/* 상품 소개 */
-	ClassicEditor
+	/* ClassicEditor
 		.create(document.querySelector('#goodsIntro_textarea'))
 		.catch(error=>{
 			console.error(error);
 		});
-		
+		 */
 	/* 상품 내용 */	
 	ClassicEditor
 		.create(document.querySelector('#goodsContents_textarea'))

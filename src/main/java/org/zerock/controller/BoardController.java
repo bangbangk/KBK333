@@ -2,6 +2,7 @@ package org.zerock.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,14 +20,16 @@ public class BoardController {
 	@Autowired
     private BoardService bservice;
 	
-	//	게시판 목록 페이지 접속
-	@GetMapping("/list")
-	   // => @RequestMapping(value="list", method=RequestMethod.GET)
-	   public void boardListGET() {
-	        
-	       log.info("게시판 목록 페이지 진입");
-	        
-	  }
+	/* 게시판 목록 페이지 접속 */
+    @GetMapping("/list")
+    // => @RequestMapping(value="list", method=RequestMethod.GET)
+    public void boardListGET(Model model) {
+        
+        log.info("게시판 목록 페이지 진입");
+        
+        model.addAttribute("list", bservice.getList());
+        
+    }
 	 // 게시판 등록 페이지 접속
 	 @GetMapping("/enroll")
 	 // => @RequestMapping(value="enroll", method=RequestMethod.GET)
@@ -37,16 +40,26 @@ public class BoardController {
 	 }
 	 
 	 /* 게시판 등록 */
-	    @PostMapping("/enroll")
-	    public String boardEnrollPOST(BoardVO board, RedirectAttributes rttr) {
+	 @PostMapping("/enroll")
+	 public String boardEnrollPOST(BoardVO board, RedirectAttributes rttr) {
 	        
-	        log.info("BoardVO : " + board);
+		 log.info("BoardVO : " + board);
 	        
-	        bservice.enroll(board);
+		 bservice.enroll(board);
 	        
-	        rttr.addFlashAttribute("result", "enrol success");
+		 rttr.addFlashAttribute("result", "enrol success");
 	        
-	        return "redirect:/board/list";
+		 return "redirect:/board/list";
+	        
+	 }
+	
+	 /* 게시판 조회 */
+	    @GetMapping("/get")
+	    public void boardGetPageGET(int bno, Model model) {
+	        
+	        model.addAttribute("pageInfo", bservice.getPage(bno));
 	        
 	    }
+	    
+	    
 }

@@ -89,7 +89,7 @@ public class AdminController {
    		
    		adminService.goodsEnroll(goods);
    		
-   		rttr.addFlashAttribute("enroll_result", goods.getGoodsName());
+   		rttr.addFlashAttribute("enroll_result", goods.getGdsName());
    		
    		return "redirect:/admin/goodsManage";
    	}	

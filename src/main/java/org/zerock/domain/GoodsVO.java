@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class GoodsVO {
 	/* 상품 id */
-	private int goodsId;
+	private int gdsNum;
 	
 	/* 상품 이름 */
-	private String goodsName;
+	private String gdsName;
 	
 	/* 카테고리 코드 */
 	private String cateCode;
@@ -16,37 +16,31 @@ public class GoodsVO {
 	private String cateName;
 	
 	/* 상품 가격 */
-	private int goodsPrice;
+	private int gdsPrice;
 	
 	/* 상품 재고 */
-	private int goodsStock;
-	
-	/* 상품 소개 */
-	private String goodsIntro;
+	private int gdsStock;
 	
 	/* 상품 내용 */
-	private String goodsContents;
+	private String gdsDes;
 	
 	/* 등록 날짜 */
-	private Date regDate;
-	
-	/* 수정 날짜 */
-	private Date updateDate;
+	private Date gdsDate;
 
-	public int getGoodsId() {
-		return goodsId;
+	public int getGdsNum() {
+		return gdsNum;
 	}
 
-	public void setGoodsId(int goodsId) {
-		this.goodsId = goodsId;
+	public void setGdsNum(int gdsNum) {
+		this.gdsNum = gdsNum;
 	}
 
-	public String getGoodsName() {
-		return goodsName;
+	public String getGdsName() {
+		return gdsName;
 	}
 
-	public void setGoodsName(String goodsName) {
-		this.goodsName = goodsName;
+	public void setGdsName(String gdsName) {
+		this.gdsName = gdsName;
 	}
 
 	public String getCateCode() {
@@ -65,60 +59,47 @@ public class GoodsVO {
 		this.cateName = cateName;
 	}
 
-	public int getGoodsPrice() {
-		return goodsPrice;
+	public int getGdsPrice() {
+		return gdsPrice;
 	}
 
-	public void setGoodsPrice(int goodsPrice) {
-		this.goodsPrice = goodsPrice;
+	public void setGdsPrice(int gdsPrice) {
+		this.gdsPrice = gdsPrice;
 	}
 
-	public int getGoodsStock() {
-		return goodsStock;
+	public int getGdsStock() {
+		return gdsStock;
 	}
 
-	public void setGoodsStock(int goodsStock) {
-		this.goodsStock = goodsStock;
+	public void setGdsStock(int gdsStock) {
+		this.gdsStock = gdsStock;
 	}
 
-	public String getGoodsIntro() {
-		return goodsIntro;
+	public String getGdsDes() {
+		return gdsDes;
 	}
 
-	public void setGoodsIntro(String goodsIntro) {
-		this.goodsIntro = goodsIntro;
+	public void setGdsDes(String gdsDes) {
+		this.gdsDes = gdsDes;
 	}
 
-	public String getGoodsContents() {
-		return goodsContents;
+	public Date getGdsDate() {
+		return gdsDate;
 	}
 
-	public void setGoodsContents(String goodsContents) {
-		this.goodsContents = goodsContents;
-	}
-
-	public Date getRegDate() {
-		return regDate;
-	}
-
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
-	}
-
-	public Date getUpdateDate() {
-		return updateDate;
-	}
-
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
+	public void setGdsDate(Date gdsDate) {
+		this.gdsDate = gdsDate;
 	}
 
 	@Override
 	public String toString() {
-		return "GoodsVO [goodsId=" + goodsId + ", goodsName=" + goodsName + ", cateCode=" + cateCode + ", cateName="
-				+ cateName + ", goodsPrice=" + goodsPrice + ", goodsStock=" + goodsStock + ", goodsIntro=" + goodsIntro
-				+ ", goodsContents=" + goodsContents + ", regDate=" + regDate + ", updateDate=" + updateDate + "]";
+		return "GoodsVO [gdsNum=" + gdsNum + ", gdsName=" + gdsName + ", cateCode=" + cateCode + ", cateName="
+				+ cateName + ", gdsPrice=" + gdsPrice + ", gdsStock=" + gdsStock + ", gdsDes=" + gdsDes + ", gdsDate="
+				+ gdsDate + "]";
 	}
+	
+	
+
 	
 	
 }
